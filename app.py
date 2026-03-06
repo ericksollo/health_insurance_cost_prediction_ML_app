@@ -1,9 +1,9 @@
 # import libraries
 import os
+import joblib
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
 
 # base directory
 BASE_DIR = os.path.dirname(__file__)
