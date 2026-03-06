@@ -1,20 +1,24 @@
 # import libraries
+import os
 import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
 
+# base directory
+BASE_DIR = os.path.dirname(__file__)
+
 #load scaler
-scaler = joblib.load('models/scaler.pkl')
+scaler = joblib.load(os.path.join(BASE_DIR, 'models', 'scaler.pkl'))
 
 # load models for categorical features encoding
-le_gender = joblib.load('models/LabelEncoder_gender.pkl')
-le_diabetic = joblib.load('models/LabelEncoder_diabetic.pkl')
-le_smoker= joblib.load('models/LabelEncoder_smoker.pkl')
-le_region= joblib.load('models/LabelEncoder_region.pkl')
+le_gender = joblib.load(os.path.join(BASE_DIR, 'models', 'LabelEncoder_gender.pkl'))
+le_diabetic = joblib.load(os.path.join(BASE_DIR, 'models', 'LabelEncoder_diabetic.pkl'))
+le_smoker = joblib.load(os.path.join(BASE_DIR, 'models', 'LabelEncoder_smoker.pkl'))
+le_region = joblib.load(os.path.join(BASE_DIR, 'models', 'LabelEncoder_region.pkl'))
 
 #load best model
-model = joblib.load('models/best_model.pkl')
+model = joblib.load(os.path.join(BASE_DIR, 'models', 'best_model.pkl'))
 
 # STREAMLIT APP
 
